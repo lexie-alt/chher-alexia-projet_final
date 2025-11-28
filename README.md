@@ -3,7 +3,9 @@
 # Liens assets
 * Forest https://www.kenney.nl/assets/pixel-platformer
 * Candy https://www.kenney.nl/assets/pixel-platformer-food-expansion
-* Cave 
+* Cave https://grafxkid.itch.io/cave-tileset
 * Farm https://www.kenney.nl/assets/pixel-platformer-farm-expansion
 * Bonus https://www.kenney.nl/assets/scribble-platformer
-* UI 
+* UI
+* sprite 2 pack https://grafxkid.itch.io/sprite-pack-2
+* fruits https://grafxkid.itch.io/mini-fx-items-ui
