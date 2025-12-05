@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://cspc65lawwho8"]
+[gd_scene load_steps=3 format=3 uid="uid://cspc65lawwho8"]
+
+[ext_resource type="Texture2D" uid="uid://cvkxibv0laquu" path="res://assets/texture_light_test.webp" id="1_0ljk6"]
+[ext_resource type="Texture2D" uid="uid://bvdhhoppuvj6f" path="res://icon.svg" id="2_k0g5a"]
 
 [node name="scn_cave" type="Node"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(500, 280)
+texture = ExtResource("2_k0g5a")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(424, 289)
+color = Color(0, 0, 0, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(502.5, 368)
+scale = Vector2(2.90234, 2.25)
+texture = ExtResource("1_0ljk6")
