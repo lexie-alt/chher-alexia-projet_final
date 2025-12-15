@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b68t1twcx4sp"]
+
+[ext_resource type="Texture2D" uid="uid://bned28l54ia8t" path="res://assets/element/fruits/Fruits (16 x 16).png" id="1_2snag"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_goeri"]
+radius = 4.0
+
+[node name="blackberry" type="Area2D"]
+
+[node name="blackberry" type="Sprite2D" parent="."]
+texture = ExtResource("1_2snag")
+hframes = 7
+frame = 6
+
+[node name="blackberry_collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_goeri")

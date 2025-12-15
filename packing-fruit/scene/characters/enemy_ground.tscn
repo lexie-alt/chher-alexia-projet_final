@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ca18snejnn7gp"]
 
 [ext_resource type="Texture2D" uid="uid://buetmnhlim66u" path="res://assets/characters/ground_enemy/Hurt (16 x 16).png" id="1_dr3ux"]
-[ext_resource type="Script" uid="uid://dnvimniap05in" path="res://scene/characters/enemy_ground.gd" id="1_qfn7v"]
+[ext_resource type="Script" uid="uid://dnvimniap05in" path="res://script/enemy_ground.gd" id="1_qfn7v"]
 [ext_resource type="Texture2D" uid="uid://drnvbxcn81lhg" path="res://assets/characters/ground_enemy/Standing (16 x 16).png" id="2_qfn7v"]
 [ext_resource type="Texture2D" uid="uid://ddttjn68m4o0x" path="res://assets/characters/ground_enemy/Walking (16 x 16).png" id="3_td5pt"]
 
@@ -66,5 +66,3 @@ shape = SubResource("CircleShape2D_td5pt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_qfn7v")
-
-[connection signal="body_entered" from="damage" to="." method="_on_damage_body_entered"]

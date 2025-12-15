@@ -74,4 +74,3 @@ func tomber_vide(body: Node2D) -> void:
 			await $SfxDisappear.finished
 			await get_tree().process_frame
 			get_tree().change_scene_to_file("res://scene/scn_level/scn_main.tscn")
-		

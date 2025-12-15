@@ -4,7 +4,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekddm"]
 atlas = ExtResource("1_kxu71")
-region = Rect2(356.533, 6.881, 38.4054, 39.93)
+region = Rect2(403.333, 404.667, 45.3333, 42.6667)
 
 [node name="pause_menu" type="Control"]
 layout_mode = 3
