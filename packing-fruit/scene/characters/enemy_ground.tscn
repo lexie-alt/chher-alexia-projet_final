@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca18snejnn7gp"]
+
+[ext_resource type="Texture2D" uid="uid://buetmnhlim66u" path="res://assets/characters/ground_enemy/Hurt (16 x 16).png" id="1_dr3ux"]
+[ext_resource type="Script" uid="uid://dnvimniap05in" path="res://scene/characters/enemy_ground.gd" id="1_qfn7v"]
+[ext_resource type="Texture2D" uid="uid://drnvbxcn81lhg" path="res://assets/characters/ground_enemy/Standing (16 x 16).png" id="2_qfn7v"]
+[ext_resource type="Texture2D" uid="uid://ddttjn68m4o0x" path="res://assets/characters/ground_enemy/Walking (16 x 16).png" id="3_td5pt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f52me"]
+atlas = ExtResource("3_td5pt")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlfjx"]
+atlas = ExtResource("3_td5pt")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_go7rn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dr3ux")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qfn7v")
+}],
+"loop": true,
+"name": &"standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f52me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlfjx")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_td5pt"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfn7v"]
+radius = 9.0
+
+[node name="enemy_ground" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_qfn7v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_go7rn")
+animation = &"walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_td5pt")
+
+[node name="damage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_qfn7v")
+
+[connection signal="body_entered" from="damage" to="." method="_on_damage_body_entered"]

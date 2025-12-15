@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn6omax4d1xte"]
+
+[ext_resource type="Texture2D" uid="uid://btid3poydgvsv" path="res://assets/element/coins/coin.png" id="1_0m54g"]
+
+[node name="hud" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -82.0
+offset_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+color = Color(0.145098, 0.145098, 0.145098, 0.592157)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_0m54g")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"

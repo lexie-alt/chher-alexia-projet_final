@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://cwkceix5rqkcf"]
+[gd_scene load_steps=3 format=3 uid="uid://cwkceix5rqkcf"]
+
+[ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui_icons.png" id="1_kxu71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekddm"]
+atlas = ExtResource("1_kxu71")
+region = Rect2(356.533, 6.881, 38.4054, 39.93)
 
 [node name="pause_menu" type="Control"]
 layout_mode = 3
@@ -7,3 +13,69 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="continuer" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -101.0
+offset_right = 101.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continuer la partie"
+
+[node name="rejouer" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -30.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Recommencer"
+
+[node name="retour" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 40.0
+offset_right = 100.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu principal"
+
+[node name="home button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -54.0
+offset_top = 8.0
+offset_right = -7.0
+offset_bottom = 55.0
+grow_horizontal = 0
+icon = SubResource("AtlasTexture_ekddm")

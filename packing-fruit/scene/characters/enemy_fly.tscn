@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://sonas5ixpxrn"]
+
+[ext_resource type="Texture2D" uid="uid://u4fs1io5osbv" path="res://assets/characters/flying_enemy/tile_0024.png" id="1_uqbl7"]
+[ext_resource type="Texture2D" uid="uid://dcn7krpkwnpwj" path="res://assets/characters/flying_enemy/tile_0025.png" id="2_rbo0n"]
+[ext_resource type="Texture2D" uid="uid://4oa4dxf7sm7" path="res://assets/characters/flying_enemy/tile_0026.png" id="3_m07fw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04hqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uqbl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rbo0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m07fw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy_fly" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_04hqc")
