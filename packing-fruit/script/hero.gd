@@ -15,7 +15,7 @@ enum Etat {
 	GLISSE_MUR
 }
 
-
+# fonction base
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -74,3 +74,4 @@ func tomber_vide(body: Node2D) -> void:
 			await $SfxDisappear.finished
 			await get_tree().process_frame
 			get_tree().change_scene_to_file("res://scene/scn_level/scn_main.tscn")
+		

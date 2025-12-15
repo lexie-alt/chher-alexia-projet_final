@@ -24,12 +24,3 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = true
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = false
-
-
-func _on_damage_body_entered(body: Node2D) -> void:
-	if body is hero and can_damage:
-		can_damage = false
-		body.take_damage(1)
-		print("damage")
-		await get_tree().create_timer(0.5).timeout
-		can_damage = true
