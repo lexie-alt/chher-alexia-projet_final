@@ -6,7 +6,5 @@ func _ready():
 func collecter_coin(body: Node2D) -> void:
 	if body is hero:
 		print("collecter")
-		$SfxCoin.play()
-		# Attendre la fin du son
-		await $SfxCoin.finished
+		SoundController.coin_effect()
 		queue_free()

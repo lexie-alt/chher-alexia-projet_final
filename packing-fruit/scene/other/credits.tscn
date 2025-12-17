@@ -1,3 +1,101 @@
-[gd_scene format=3 uid="uid://bgjoi81yhk4mo"]
+[gd_scene load_steps=6 format=3 uid="uid://bgjoi81yhk4mo"]
 
-[node name="credits" type="Node"]
+[ext_resource type="Script" uid="uid://clscqhcbnvnio" path="res://script/credits.gd" id="1_k8dru"]
+[ext_resource type="FontFile" uid="uid://bcelt2uwsv1by" path="res://assets/fonts/Jersey15-Regular.ttf" id="2_b4kso"]
+[ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui_icons.png" id="3_3dkmm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oe267"]
+bg_color = Color(0, 0.694118, 0.619608, 0.952941)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj4vl"]
+atlas = ExtResource("3_3dkmm")
+region = Rect2(208.33, 57.45, 35.09, 38.72)
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k8dru")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 652.0
+
+[node name="retour" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -555.5
+offset_top = 19.0
+offset_right = -390.5
+offset_bottom = 65.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_b4kso")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_oe267")
+text = "Retour menu"
+icon = SubResource("AtlasTexture_gj4vl")
+
+[node name="Assets" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -324.0
+offset_right = 569.0
+offset_bottom = 322.0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_b4kso")
+theme_override_font_sizes/font_size = 25
+text = "ASSETS
+Pixel Platformer by KENNEY
+Pixel Platformer Food Expansion by KENNEY
+Pixel Platformer Farm Expansion by KENNEY
+Scribble Platformer by KENNEY
+Cave Tileset by GRAFXKID
+Sprite Pack 2 by GRAFXKID
+Mini FX, Items & UI by GRAFXKID
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -595.0
+offset_top = -321.0
+offset_right = -5.0
+offset_bottom = 322.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_b4kso")
+theme_override_font_sizes/font_size = 25
+text = "SOUNDS
+Intro Music : Retro Game Arcade by MOODMODE
+Game Music : Pixel Dreams by DJLOFI
+Cave Music : Children Funny Background by TUNETANK
+Credit Music : Game 8-Bit On by MOODMODE
+Sounds Effects by KENNEY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.5
+offset_top = 101.0
+offset_right = 70.5
+offset_bottom = 152.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_b4kso")
+theme_override_font_sizes/font_size = 50
+text = "CRÉDITS"
+
+[connection signal="pressed" from="Panel/retour" to="." method="_on_retour_pressed"]

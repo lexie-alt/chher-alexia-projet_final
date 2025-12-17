@@ -1,29 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwkceix5rqkcf"]
+[gd_scene load_steps=7 format=3 uid="uid://cwkceix5rqkcf"]
 
+[ext_resource type="FontFile" uid="uid://bcelt2uwsv1by" path="res://assets/fonts/Jersey15-Regular.ttf" id="1_ekddm"]
+[ext_resource type="Script" uid="uid://c4q2n1xikesd5" path="res://script/pause_menu.gd" id="1_hbfen"]
 [ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui_icons.png" id="1_kxu71"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbfen"]
+bg_color = Color(0, 0.694118, 0.619608, 0.952941)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6xgv"]
+bg_color = Color(0, 0.694118, 0.619608, 0.952941)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ekddm"]
 atlas = ExtResource("1_kxu71")
 region = Rect2(403.333, 404.667, 45.3333, 42.6667)
 
-[node name="pause_menu" type="Control"]
-layout_mode = 3
+[node name="pause_menu" type="CanvasLayer"]
+script = ExtResource("1_hbfen")
+
+[node name="PauseMenu" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="continuer" type="Button" parent="Panel"]
+[node name="continuer" type="Button" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -31,14 +34,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -99.0
-offset_top = -101.0
-offset_right = 101.0
-offset_bottom = -51.0
+offset_top = -73.0
+offset_right = 100.205
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ekddm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_hbfen")
+action_mode = 0
 text = "Continuer la partie"
 
-[node name="rejouer" type="Button" parent="Panel"]
+[node name="rejouer" type="Button" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,14 +53,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = -30.0
-offset_right = 100.0
-offset_bottom = 20.0
+offset_top = -15.0
+offset_right = 99.205
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ekddm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6xgv")
+action_mode = 0
 text = "Recommencer"
 
-[node name="retour" type="Button" parent="Panel"]
+[node name="retour" type="Button" parent="PauseMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,21 +72,30 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -100.0
-offset_top = 40.0
-offset_right = 100.0
-offset_bottom = 90.0
+offset_top = 42.0
+offset_right = 99.205
+offset_bottom = 82.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_ekddm")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6xgv")
+action_mode = 0
 text = "Menu principal"
 
-[node name="home button" type="Button" parent="."]
-layout_mode = 1
+[node name="exit_button" type="Button" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -54.0
-offset_top = 8.0
-offset_right = -7.0
-offset_bottom = 55.0
+offset_left = -59.0
+offset_top = 18.0
+offset_right = -6.0
+offset_bottom = 68.0
 grow_horizontal = 0
+scale = Vector2(0.675, 0.675)
 icon = SubResource("AtlasTexture_ekddm")
+
+[connection signal="pressed" from="PauseMenu/continuer" to="." method="_continuegame"]
+[connection signal="pressed" from="PauseMenu/rejouer" to="." method="_replaygame"]
+[connection signal="pressed" from="PauseMenu/retour" to="." method="_mainmenu"]
+[connection signal="pressed" from="exit_button" to="." method="_exitmenu"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://cs1h060elw7jq"]
+
+[ext_resource type="Texture2D" uid="uid://dsq6a8y06aqgb" path="res://assets/scn/02_candy/tilemap_packed.png" id="1_ky8f6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwcii"]
+atlas = ExtResource("1_ky8f6")
+region = Rect2(180.893, 0.696924, 53.0694, 17.2019)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1horw"]
+size = Vector2(53, 10)
+
+[sub_resource type="Animation" id="Animation_iwcii"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ky8f6"]
+resource_name = "moving_plat_candy"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 2.6, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1horw"]
+_data = {
+&"RESET": SubResource("Animation_iwcii"),
+&"moving_plat_candy": SubResource("Animation_ky8f6")
+}
+
+[node name="ascenceur_candy" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_iwcii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -7)
+shape = SubResource("RectangleShape2D_1horw")
+
+[node name="ascenceur_animation2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1horw")
+}
+autoplay = "moving_plat_candy"

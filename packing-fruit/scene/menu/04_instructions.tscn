@@ -1,4 +1,15 @@
-[gd_scene format=3 uid="uid://bbdbfsaldqjdm"]
+[gd_scene load_steps=6 format=3 uid="uid://bbdbfsaldqjdm"]
+
+[ext_resource type="Script" uid="uid://cbxipx6v2a88y" path="res://script/instructions.gd" id="1_lmxot"]
+[ext_resource type="FontFile" uid="uid://bcelt2uwsv1by" path="res://assets/fonts/Jersey15-Regular.ttf" id="2_i3hqo"]
+[ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui_icons.png" id="3_hmlvy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk1sk"]
+bg_color = Color(0, 0.694118, 0.619608, 0.952941)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exagb"]
+atlas = ExtResource("3_hmlvy")
+region = Rect2(208.33, 57.45, 35.09, 38.72)
 
 [node name="04_instructions" type="Control"]
 layout_mode = 3
@@ -7,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lmxot")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -14,21 +26,52 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_right = 212.0
+offset_left = -576.0
+offset_right = 576.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="rejouer" type="Button" parent="Panel"]
+[node name="retour" type="Button" parent="Panel"]
 layout_mode = 1
-anchors_preset = -1
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 219.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_i3hqo")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_wk1sk")
+text = "Retour menu"
+icon = SubResource("AtlasTexture_exagb")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.944
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.944
-offset_left = -100.0
-offset_top = -317.712
-offset_right = 100.0
-offset_bottom = -267.712
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -222.0
+offset_right = 502.0
+offset_bottom = 237.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Recommencer"
+theme_override_fonts/font = ExtResource("2_i3hqo")
+theme_override_font_sizes/font_size = 25
+text = "COMMENT JOUER ?
+
+But du jeu : explorer l'environnement et récupérer les fruits pour compléter le niveau
+
+Récupérer les fruits demandés et les apportés au bohomme de couleur.
+
+Il vous donnera ensuite une clé pour sortir du niveau.
+
+Utiliser les touches WASD ou les flèches du clavier pour vous déplacer. La barre d'espace pour sauter.
+
+Pour mettre le jeu sur pause, appuyer sur ESC.
+
+Bonne récolte !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/retour" to="." method="_on_retour_pressed"]

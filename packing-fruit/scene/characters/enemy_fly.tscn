@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://sonas5ixpxrn"]
+[gd_scene load_steps=10 format=3 uid="uid://sonas5ixpxrn"]
 
+[ext_resource type="Script" uid="uid://dfc6uscro850y" path="res://script/enemy_fly.gd" id="1_rbo0n"]
 [ext_resource type="Texture2D" uid="uid://u4fs1io5osbv" path="res://assets/characters/flying_enemy/tile_0024.png" id="1_uqbl7"]
 [ext_resource type="Texture2D" uid="uid://dcn7krpkwnpwj" path="res://assets/characters/flying_enemy/tile_0025.png" id="2_rbo0n"]
 [ext_resource type="Texture2D" uid="uid://4oa4dxf7sm7" path="res://assets/characters/flying_enemy/tile_0026.png" id="3_m07fw"]
@@ -21,7 +22,70 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="enemy_fly" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uqbl7"]
+radius = 15.1327
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[sub_resource type="Animation" id="Animation_m07fw"]
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemy_fly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -120), Vector2(0, 0), Vector2(0, -119.52)]
+}
+
+[sub_resource type="Animation" id="Animation_rbo0n"]
+resource_name = "flying_enemy"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemy_fly:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.46667, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -120), Vector2(0, -50)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_04hqc"]
+_data = {
+&"RESET": SubResource("Animation_m07fw"),
+&"flying_enemy": SubResource("Animation_rbo0n")
+}
+
+[node name="enemy_fly" type="Node2D"]
+script = ExtResource("1_rbo0n")
+
+[node name="enemy_fly" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -120)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_04hqc")
+autoplay = "default"
+frame_progress = 0.320734
+
+[node name="vision" type="Area2D" parent="enemy_fly"]
+scale = Vector2(0.664452, 0.664452)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_fly/vision"]
+shape = SubResource("CircleShape2D_uqbl7")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -120)
+
+[node name="flying_animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_04hqc")
+}
+autoplay = "RESET"

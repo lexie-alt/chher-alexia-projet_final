@@ -1,9 +1,0 @@
-extends Node
-
-#func reset():
-	
-
-
-
-
-		

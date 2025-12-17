@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="packing-fruit"
-run/main_scene="uid://dg8afsu6gbib4"
+run/main_scene="uid://ckjeqvqsyteef"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Main="*res://script/main.gd"
+Main="*res://autoloads/main.gd"
+SoundController="*res://autoloads/sound_controller.tscn"
+
+[global_group]
+
+music=""
+fruits=""
 
 [input]
 

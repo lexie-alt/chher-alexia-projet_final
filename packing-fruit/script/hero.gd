@@ -1,5 +1,4 @@
-extends CharacterBody2D
-class_name hero
+class_name hero extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -45,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		$SfxJump.play()
+		SoundController.jump_effect()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -60,8 +59,7 @@ func _physics_process(delta: float) -> void:
 # fonction passsage cave
 func passage_cave(body: Node2D) -> void:
 	if body is hero:
-		$SfxPassage.play()
-		await $SfxPassage.finished
+		SoundController.passage_effect()
 		get_tree().change_scene_to_file("res://scene/scn_level/scn_cave.tscn")
 		print("entrer cave") 
 	
@@ -70,7 +68,6 @@ func passage_cave(body: Node2D) -> void:
 func tomber_vide(body: Node2D) -> void:
 		if body is hero:
 			print("tomber vide")
-			$SfxDisappear.play()
-			await $SfxDisappear.finished
+			SoundController.tomber_effect()
 			await get_tree().process_frame
 			get_tree().change_scene_to_file("res://scene/scn_level/scn_main.tscn")
