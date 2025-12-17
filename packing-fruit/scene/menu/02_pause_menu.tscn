@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bcelt2uwsv1by" path="res://assets/fonts/Jersey15-Regular.ttf" id="1_ekddm"]
 [ext_resource type="Script" uid="uid://c4q2n1xikesd5" path="res://script/pause_menu.gd" id="1_hbfen"]
-[ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui_icons.png" id="1_kxu71"]
+[ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui/ui_icons.png" id="1_kxu71"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbfen"]
 bg_color = Color(0, 0.694118, 0.619608, 0.952941)

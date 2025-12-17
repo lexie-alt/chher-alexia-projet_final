@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbxipx6v2a88y" path="res://script/instructions.gd" id="1_lmxot"]
 [ext_resource type="FontFile" uid="uid://bcelt2uwsv1by" path="res://assets/fonts/Jersey15-Regular.ttf" id="2_i3hqo"]
-[ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui_icons.png" id="3_hmlvy"]
+[ext_resource type="Texture2D" uid="uid://c8bgueim1tsa0" path="res://assets/element/ui/ui_icons.png" id="3_hmlvy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wk1sk"]
 bg_color = Color(0, 0.694118, 0.619608, 0.952941)
@@ -22,12 +22,9 @@ script = ExtResource("1_lmxot")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_right = 576.0
 grow_horizontal = 2
 grow_vertical = 2
 

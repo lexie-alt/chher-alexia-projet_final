@@ -38,4 +38,4 @@ func _on_tutoriel_pressed() -> void:
 func _on_credits_pressed() -> void:
 	print("credit")
 	SoundController.select_effect()
-	get_tree().change_scene_to_file("res://scene/other/credits.tscn")
+	get_tree().change_scene_to_file("res://scene/menu/05_credits.tscn")

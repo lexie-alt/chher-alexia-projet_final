@@ -115,6 +115,7 @@ shape = SubResource("CircleShape2D_24cu8")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.35, 2.35)
 limit_left = 0
+limit_top = -540
 limit_right = 1960
 limit_bottom = 500
 editor_draw_limits = true

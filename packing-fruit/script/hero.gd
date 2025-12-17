@@ -71,3 +71,10 @@ func tomber_vide(body: Node2D) -> void:
 			SoundController.tomber_effect()
 			await get_tree().process_frame
 			get_tree().change_scene_to_file("res://scene/scn_level/scn_main.tscn")
+
+
+func retour_passage(body: Node2D) -> void:
+	if body is hero:
+		SoundController.passage_effect()
+		get_tree().change_scene_to_file("res://scene/scn_level/scn_main.tscn")
+		print("sortir cave")
