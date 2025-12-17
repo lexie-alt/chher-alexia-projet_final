@@ -1,5 +1,10 @@
 # chher-alexia-projet_final
 
+# Voir Documentation Word pour concept du jeu
+
+# Code pour Itchio
+Interactivite
+
 # Liens assets
 * Forest https://www.kenney.nl/assets/pixel-platformer
 * Candy https://www.kenney.nl/assets/pixel-platformer-food-expansion
