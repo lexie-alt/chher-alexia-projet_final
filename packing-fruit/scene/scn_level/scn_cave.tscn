@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=4 uid="uid://cspc65lawwho8"]
 
-[ext_resource type="Texture2D" uid="uid://cvkxibv0laquu" path="res://assets/texture_light_test.webp" id="1_0ljk6"]
+[ext_resource type="Texture2D" uid="uid://cvkxibv0laquu" path="res://assets/element/texture_light_test.webp" id="1_0ljk6"]
 [ext_resource type="Script" uid="uid://dryvh8y4qbws6" path="res://script/scn_cave.gd" id="1_erqmd"]
 [ext_resource type="Texture2D" uid="uid://dq26t1to8p5ou" path="res://assets/scn/03_cave/cave back.png" id="1_vaa5d"]
 [ext_resource type="Texture2D" uid="uid://cv3kayworjmyj" path="res://assets/scn/03_cave/Scaffolding_and_BG_Parts (16 x 16).png" id="2_erqmd"]
@@ -415,10 +415,8 @@ size = Vector2(32, 32)
 script = ExtResource("1_erqmd")
 
 [node name="pause_menu" parent="." instance=ExtResource("7_iu7kx")]
-visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(424, 289)
 color = Color(0, 0, 0, 1)
 
